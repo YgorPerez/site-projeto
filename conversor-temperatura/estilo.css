@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+body {
+    background: darkslateblue;
+    font: normal 14pt Arial;
+}
+button {
+    padding: 30px;
+    font-size: 14pt;
+    background-color: blueviolet;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+input {
+    text-align: right;
+}
+header {
+    color: darkgrey;
+    text-align: center;
+}
+section {
+    background: ghostwhite;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.582);
+}
+footer {
+    color: darkgrey;
+    text-align: center;
+    font-style: italic;
+}
+input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
