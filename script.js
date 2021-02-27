@@ -30,7 +30,7 @@ function temp() {
                 }
                 break;
             case 3:
-                if (num < -460) {
+                if (num <= -459.7) {
                     res.innerHTML = 'O zero absoluto do farenheit é -460, digite um número maior';
                 }
                 else {

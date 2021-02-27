@@ -2,6 +2,7 @@
 body {
     background: darkslateblue;
     font: normal 14pt Arial;
+    line-height: 30px;
 }
 button {
     padding: 30px;
@@ -14,7 +15,8 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
 }
 input {
-    text-align: right;
+    text-align: center;
+    width: 170px;
 }
 header {
     color: darkgrey;
