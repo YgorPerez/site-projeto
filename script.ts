@@ -29,7 +29,7 @@ function temp() {
                 }
                 else {
                     con = (con*9/5) + 32
-                    res.innerHTML = `${num}°C é igual á ${con}°F `
+                    res.innerHTML = `${num.toFixed(2)}°C é igual á ${con.toFixed(2)}°F `
                 }
                 break;
             case 2:
@@ -38,7 +38,7 @@ function temp() {
                 }
                 else {
                     con += 273.15
-                    res.innerHTML = `${num}°C é igual á ${con}°K `
+                    res.innerHTML = `${num.toFixed(2)}°C é igual á ${con.toFixed(2)}°K `
                 }
                 break;
             case 3: 
@@ -47,7 +47,7 @@ function temp() {
             }
             else {
                 con = (con-32) *5 /9
-                res.innerHTML = `${num}°F é igual á ${con}°C `
+                res.innerHTML = `${num.toFixed(2)}°F é igual á ${con.toFixed(2)}°C `
             }
             break;
             case 4: 
@@ -56,7 +56,7 @@ function temp() {
             }
             else {
                 con = (con-32) *5/9 + 273.15
-                res.innerHTML = `${num}°F é igual á ${con}°K `
+                res.innerHTML = `${num.toFixed(2)}°F é igual á ${con.toFixed(2)}°K `
             }
             break;
             case 5: 
@@ -65,7 +65,7 @@ function temp() {
             }
             else {
                 con -= 273.15
-                res.innerHTML = `${num}°K é igual á ${con}°C `
+                res.innerHTML = `${num.toFixed(2)}°K é igual á ${con.toFixed(2)}°C `
             }
             break;
             case 6: 
@@ -74,7 +74,7 @@ function temp() {
             }
             else {
                 con = (con-273.15) *9/5 + 32
-                res.innerHTML = `${num}°K é igual á ${con}°F `
+                res.innerHTML = `${num.toFixed(2)}°K é igual á ${con.toFixed(2)}°F `
             }
             break;
             default: {
