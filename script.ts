@@ -1,13 +1,25 @@
 var res = document.getElementById('res')
+var txtop = (<HTMLInputElement>document.getElementById('txtop'));
+var txtn = (<HTMLInputElement>document.getElementById('txtn'));
+document.querySelector('body').addEventListener('keydown', (event) => {
+    var tecla = event.keyCode;
+    if(tecla == 13 && txtn.value.length != 0) {
+        txtop.focus()
+        temp()
+    }
+})
 function temp() {
     res.innerHTML = ''
-    var txtop = (<HTMLInputElement>document.getElementById('txtop')).value;
-    var op = Number(txtop)
-    var txtn = (<HTMLInputElement>document.getElementById('txtn')).value;
-    var num = Number(txtn)
+    txtop = (<HTMLInputElement>document.getElementById('txtop'));
+    var op = Number(txtop.value)
+    txtn = (<HTMLInputElement>document.getElementById('txtn'));
+    var num = Number(txtn.value)
     var con = num
-    if (txtn.length == 0 || txtop.length == 0) {
-        res.innerHTML = 'Digite um número e uma opção para começar'
+    if (txtn.value.length == 0) {
+        res.innerHTML = 'Digite um número para começar'
+    }
+    else if(txtop.value.length == 0) {
+        res.innerHTML = 'Digite uma das opções de [1] a [6]'
     }
     else {
         switch (op) {
@@ -66,8 +78,11 @@ function temp() {
             }
             break;
             default: {
-                res.innerHTML = 'Digite um dos números das opções'
+                res.innerHTML = 'Digite uma das opções de [1] a [6]'
             }
         }
+        txtn.value = ''
+        txtop.value = ''
+        txtn.focus()
     }
 }

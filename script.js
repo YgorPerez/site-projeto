@@ -1,13 +1,25 @@
 var res = document.getElementById('res');
+var txtop = document.getElementById('txtop');
+var txtn = document.getElementById('txtn');
+document.querySelector('body').addEventListener('keydown', (event) => {
+    var tecla = event.keyCode;
+    if (tecla == 13 && txtn.value.length != 0) {
+        txtop.focus();
+        temp();
+    }
+});
 function temp() {
     res.innerHTML = '';
-    var txtop = document.getElementById('txtop').value;
-    var op = Number(txtop);
-    var txtn = document.getElementById('txtn').value;
-    var num = Number(txtn);
+    txtop = document.getElementById('txtop');
+    var op = Number(txtop.value);
+    txtn = document.getElementById('txtn');
+    var num = Number(txtn.value);
     var con = num;
-    if (txtn.length == 0 || txtop.length == 0) {
-        res.innerHTML = 'Digite um número e uma opção para começar';
+    if (txtn.value.length == 0) {
+        res.innerHTML = 'Digite um número para começar';
+    }
+    else if (txtop.value.length == 0) {
+        res.innerHTML = 'Digite uma das opções de [1] a [6]';
     }
     else {
         switch (op) {
@@ -17,7 +29,7 @@ function temp() {
                 }
                 else {
                     con = (con * 9 / 5) + 32;
-                    res.innerHTML = num + "\u00B0C \u00E9 igual \u00E1 " + con + "\u00B0F ";
+                    res.innerHTML = `${num}°C é igual á ${con}°F `;
                 }
                 break;
             case 2:
@@ -26,7 +38,7 @@ function temp() {
                 }
                 else {
                     con += 273.15;
-                    res.innerHTML = num + "\u00B0C \u00E9 igual \u00E1 " + con + "\u00B0K ";
+                    res.innerHTML = `${num}°C é igual á ${con}°K `;
                 }
                 break;
             case 3:
@@ -35,7 +47,7 @@ function temp() {
                 }
                 else {
                     con = (con - 32) * 5 / 9;
-                    res.innerHTML = num + "\u00B0F \u00E9 igual \u00E1 " + con + "\u00B0C ";
+                    res.innerHTML = `${num}°F é igual á ${con}°C `;
                 }
                 break;
             case 4:
@@ -44,7 +56,7 @@ function temp() {
                 }
                 else {
                     con = (con - 32) * 5 / 9 + 273.15;
-                    res.innerHTML = num + "\u00B0F \u00E9 igual \u00E1 " + con + "\u00B0K ";
+                    res.innerHTML = `${num}°F é igual á ${con}°K `;
                 }
                 break;
             case 5:
@@ -53,7 +65,7 @@ function temp() {
                 }
                 else {
                     con -= 273.15;
-                    res.innerHTML = num + "\u00B0K \u00E9 igual \u00E1 " + con + "\u00B0C ";
+                    res.innerHTML = `${num}°K é igual á ${con}°C `;
                 }
                 break;
             case 6:
@@ -62,12 +74,15 @@ function temp() {
                 }
                 else {
                     con = (con - 273.15) * 9 / 5 + 32;
-                    res.innerHTML = num + "\u00B0K \u00E9 igual \u00E1 " + con + "\u00B0F ";
+                    res.innerHTML = `${num}°K é igual á ${con}°F `;
                 }
                 break;
             default: {
-                res.innerHTML = 'Digite um dos números das opções';
+                res.innerHTML = 'Digite uma das opções de [1] a [6]';
             }
         }
+        txtn.value = '';
+        txtop.value = '';
+        txtn.focus();
     }
 }
